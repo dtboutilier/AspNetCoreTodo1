@@ -24,15 +24,15 @@ namespace AspNetCoreTodo.Controllers
             // Get to-do items from database
             var todoItems = await _todoItemService.GetIncompleteItemsAsync();
 
+            // Put items into a model
+
             var model = new TodoViewModel()
             {
                 Items = todoItems,
             };
 
-            // Put items into a model
-
             // Pass the view to a model and render
-            return View();
+            return View(model);
         }
     }
 }
